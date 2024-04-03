@@ -1,0 +1,80 @@
+CREATE TABLE filmes (
+	FILMES_id ID INT PRIMARY KEY AUTO_INCREMENT,
+	Path VARCHAR(255) NOT NULL,
+  	Titulo VARCHAR(45) NOT NULL,
+   	Duracao DATATIME,	
+	DataLancamento DATE,
+ 	Diretor VARCHAR(45),
+	Artistaprincipais VARCHAR(45),
+	Diretor VARCHAR(45),
+	Poster VARCHAR(255),
+	Genero VARCHAR(45),
+	);
+	
+CREATE TABLE Creditos	 (
+    	CREDITOS_id ID INT PRIMARY KEY AUTO_INCREMENT,
+    	Nome VARCHAR(255) NOT NULL,
+   	 DataNascimento DATE,
+    	DataFalecimento DATE,
+   	 Tipo VARCHAR(50),
+   	 Biografia TEXT,
+    	filmeMaisConhecida VARCHAR(255)
+);
+CREATE TABLE Usuarios (
+    	USUARIO_id ID INT PRIMARY KEY AUTO_INCREMENT,
+    	Email VARCHAR(255) NOT NULL,
+    	Senha VARCHAR(255) NOT NULL,
+    	NomeCompleto VARCHAR(255) NOT NULL,
+    	Idade INT,
+    	GenerosPreferidosFilme VARCHAR(255),
+    	DataCriacaoPerfil DATE,
+    	UltimoAcessoApp DATETIME,
+    	Celular VARCHAR(20),
+    	Plano VARCHAR(50)
+	);
+
+CREATE TABLE Assinatura (
+    	ID INT PRIMARY KEY AUTO_INCREMENT,
+	NomePlano VARCHAR(50)
+	PrecoPlano MONEY,
+	Recorrencia INT,
+	DescPlano VARCHAR(255);
+	QtdPermissão INT,
+);
+
+
+
+CREATE TABLE Usuarios (
+    	ID INT PRIMARY KEY AUTO_INCREMENT,
+    	Email VARCHAR(255) NOT NULL,
+    	Senha VARCHAR(255) NOT NULL,
+    	FILMES ID INT,
+    	FOREIGN KEY (FILMES_ui) REFERENCES FILMES(ID)
+);
+
+
+INSERT INTO filmes VALUES (1, 'Velozes e Furiosos',);
+INSERT INTO filmes VALUES (2, 'Velozes e Furiosos-2',);
+INSERT INTO filmes VALUES (3, 'Velozes e Furiosos-3',);
+
+INSERT INTO artistas VALUES (1, 'Bryan',);
+INSERT INTO artistas VALUES (2, 'Toretto',);
+INSERT INTO artistas VALUES (3, 'Mia',);
+INSERT INTO artistas VALUES (4, 'Han',);
+
+INSERT INTO filmes VALUES (1, 'Diretor-1',);
+
+INSERT INTO Usuario VALUES (1, 'Usuario-1','usuarioum@gmail.com','senha_1');
+INSERT INTO Usuario VALUES (2, 'Usuario-2','usuariodois@gmail.com','senha_2');
+
+INSERT INTO Assinatura VALUES (1, 'assin_1','plano_anual','145,90','anual');
+INSERT INTO Assinatura VALUES (2, 'assin_2','plano_mensal','25,00','mensal');
+INSERT INTO Assinatura VALUES (3, 'assin_3','plano_diário','9,90','anual');
+
+
+
+
+
+
+
+	
